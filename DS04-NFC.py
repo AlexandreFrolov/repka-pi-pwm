@@ -1,4 +1,3 @@
-#import RPi.GPIO as GPIO
 import RepkaPi.GPIO as GPIO
 import time
 import warnings
@@ -15,8 +14,9 @@ if __name__ == '__main__':
             pulse_width = float(input("Введите длительность импульса (1-2): "))
             pulse_width = pulse_width / 1000;
             duty = pulse_width / (1 / frequency_Hz) * 100
-            print(pulse_width)
-            print(duty)
+            
+            print("Длительность импульса ШИМ :" + str(pulse_width) + " mc")
+            print("Коэффициент заполнения Duty: " + str(duty) + "%")
             
             servo.start_pwm()
             servo.duty_cycle(duty)
