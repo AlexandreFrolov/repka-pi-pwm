@@ -4,6 +4,7 @@ import sys
 
 def setServoAngle(servo, frequency_Hz, angle):
     servo.start_pwm()  
+    
     dutyCycle = angle / 18. + 3.
     
     print("Угол поворота: " + str(angle) + "\xb0")
