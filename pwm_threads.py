@@ -15,10 +15,6 @@ def set_servo_angle(angle, frequency_Hz):
     pulse_duration = ((period_duration / 100) * dutyCycle)
     wait_after_pulse = period_duration - round(pulse_duration, 1)
     
-    print(pulse_duration)
-    print(wait_after_pulse)
-    
-
     GPIO.output(servo_pin, GPIO.HIGH)
     threading.Timer(pulse_duration / 1000.0, lambda: GPIO.output(servo_pin, GPIO.LOW)).start()
     threading.Timer(wait_after_pulse / 1000.0, lambda: set_servo_angle(angle, frequency_Hz)).start()
