@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import RepkaPi.GPIO as GPIO
 import time
 import warnings
